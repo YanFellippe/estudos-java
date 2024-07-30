@@ -1,31 +1,48 @@
 public class Pessoa {
-     private String nome;
-     private int idade;
-
-    //  Método Setter para o atributo nome
-    public void setNome(String nome){
-        this.nome = nome; //atualiza o valor do atributo nome
-    }
-
-    public void setIdade(int idade){
-        this.idade = idade; //atualiza o valor do atributo idade
-    }
-
-    // metodfo Getter para o atributo nome (mostra o valor)
-    public String getNome(){
-        return nome; //retorna o valor do atributo nome
-    }
-
-    public int getIdade() {
-        return idade; //retorna o valor do atributo idade
+    // Atributos privados
+    private String nome;
+    private int idade;
+    
+    // Construtor
+    public Pessoa(String nome, int idade) { this.nome = nome;
+        this.idade = idade;
     }
     
-    // método main para testar a classe Pessoa
-    public static void main(String[] args) {
-        Pessoa pessoa = new Pessoa(); //cria um objeto da classe Pessoa
-        pessoa.setNome("Yanzinho"); //define o nome do objeto
-        pessoa.setIdade(22); //retorna o valor do atributo
-        System.out.println("Nome: " + pessoa.getNome()); //exibe o nome do objeto
-        System.out.println("Idade: " + pessoa.getIdade()); //exibe a idade do objeto
+    // Métodos públicos para acessar e modificar os atributos
+    public String getNome() {
+        return nome;
     }
+    
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+    
+    public int getIdade() {
+        return idade;
+    }
+    
+    public void setIdade(int idade) {
+    // Podemos adicionar lógica para validação
+        if (idade >= 0) {
+            this.idade = idade;
+        }
+    }
+    
+    // Método para exibir as informações da pessoa
+    public void exibirInformacoes() {
+        System.out.println("Nome: " + this.nome);
+        System.out.println("Idade: " + this.idade);
+    }
+    
+    // Método principal para testar a classe
+    public static void main(String[] args) {
+        // Criação de um objeto Pessoa
+        Pessoa pessoa = new Pessoa("Alice", 30);
+        // Exibir as informações da pessoa
+        pessoa.exibirInformacoes();
+        // Alterar e exibir as novas informações
+        pessoa.setNome("Maria"); pessoa.setIdade(28);
+        pessoa.exibirInformacoes();
+    }
+    
 }
