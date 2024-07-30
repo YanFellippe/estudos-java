@@ -2,8 +2,11 @@ public class Curso {
     private String nome;
     private int duracao;
 
-    public Curso(String nome, int duracao) {
+    public void setNome(String nome){
         this.nome = nome;
+    }
+
+    public void setDuracao(int duracao){
         this.duracao = duracao;
     }
 
@@ -16,8 +19,10 @@ public class Curso {
     }
 
     public static void main(String[] args) {
-        Curso curso = new Curso("Java - Básico ao Avançado", 4000);
-        System.out.println("Nome do Curso: " + curso.getNome());
-        System.out.println("Duração: " + curso.getDuração() + " horas");
+        Curso curso1 = new Curso();
+        curso1.setNome("Java - Básico ao Avançado");
+        curso1.setDuracao(4000);
+        System.out.println("Nome do Curso: " + curso1.getNome());
+        System.out.println("Duração: " + curso1.getDuração() + " horas");
     }
 }
