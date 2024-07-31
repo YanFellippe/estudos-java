@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Filme1 {
     private String titulo;
     private int idadeMin;
@@ -18,7 +20,6 @@ public class Filme1 {
     public String getTitulo(){
         return titulo;
     }
-
     public int getIdadeMin(){
         return idadeMin;
     }
@@ -26,9 +27,11 @@ public class Filme1 {
     public static void main(String[] args){
         Filme1 filme = new Filme1();
         filme.setTitulo("Dead Pool e Wollverine");
-        filme.setIdadeMinima(11);
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Digite a sua idade: ");
+        filme.setIdadeMinima(scan.nextInt());
+        scan.close();
         System.out.println("Filme: " + filme.getTitulo());
         System.out.println("Classificação mínima: " + filme.getIdadeMin());
     }
-
 }
