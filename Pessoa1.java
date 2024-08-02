@@ -40,7 +40,7 @@ public class Pessoa1 {
     }
 
     public void setTelefone(int telefone) {
-            this.telefone = telefone;
+        this.telefone = telefone;
     }
 
     public void email(String email) {
@@ -53,12 +53,12 @@ public class Pessoa1 {
     }
 
     public void setCPF(String CPF) {
-            if(CPF == null || !CPF.matches("\\d{11}")){
-                this.CPF = "Inválido";
-                System.out.println("CPF Inválido");
-            } else{
-                this.CPF = CPF;
-            }
+        if(CPF == null || !CPF.matches("\\d{11}")){
+            this.CPF = "Inválido";
+            System.out.println("CPF Inválido");
+        } else{
+            this.CPF = CPF;
+        }
     }
 
     public void setSexo(String sexo) {
@@ -73,7 +73,7 @@ public class Pessoa1 {
     public void setEstadoCivil(String estadoCivil) {
         if (estadoCivil == null || (!estadoCivil.equals("Solteiro") && !estadoCivil.equals("Casado") && !estadoCivil.equals("Divorciado") && !estadoCivil.equals("Viúvo"))) {
             System.out.println("Estado Civil deve ser 'Solteiro', 'Casado', 'Divorciado' ou 'Viúvo'.");
-            this.estadoCivil = "Solteiro";
+            this.estadoCivil = null;
         } else {
             this.estadoCivil = estadoCivil;
         }
