@@ -4,7 +4,7 @@ public class Pessoa1 {
     private String endereço;
     private int telefone;
     private String email;
-    private int CPF;    
+    private String CPF;    
     private String sexo;
     private String estadoCivil;
     private String profissão;
@@ -52,8 +52,13 @@ public class Pessoa1 {
         }
     }
 
-    public void setCPF(int CPF) {
-            this.CPF = CPF;
+    public void setCPF(String CPF) {
+            if(CPF.replaceAll("\\D", "").length() == 11){
+                this.CPF = CPF;
+            } else{
+                System.out.println("CPF inválido. Deve conter 11 números.");
+                this.CPF = CPF;
+            }
     }
 
     public void setSexo(String sexo) {
@@ -120,7 +125,7 @@ public class Pessoa1 {
         return email;
     }
 
-    public int getCPF() {
+    public String getCPF() {
         return CPF;
     }
 
@@ -155,7 +160,7 @@ public class Pessoa1 {
         pessoa1.setEndereço("Rua dos Ricos, 123");
         pessoa1.setTelefone(696969696);
         pessoa1.email("yan@gmail.com");
-        pessoa1.setCPF(1233456881);
+        pessoa1.setCPF("12334568801");
         pessoa1.setSexo("Masculino");
         pessoa1.setEstadoCivil("Casado");
         pessoa1.setProfissão("Gerente de TI");
