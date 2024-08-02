@@ -177,7 +177,7 @@ public class Pessoa1 {
         System.out.println("Sexo: " + pessoa1.getSexo());
         System.out.println("Estado Civil: " + pessoa1.getEstadoCivil());
         System.out.println("Profissão: " + pessoa1.getProfissão());
-        System.out.println("Salário: " + pessoa1.getSalario());
+        System.out.println("Salário: R$" + pessoa1.getSalario());
         System.out.println("Nacionalidade: " + pessoa1.getNacionalidade());
         System.out.println("Filhos: " + pessoa1.getFilhos());
     } 
