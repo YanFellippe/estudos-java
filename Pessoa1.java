@@ -53,10 +53,10 @@ public class Pessoa1 {
     }
 
     public void setCPF(String CPF) {
-            if(CPF.replaceAll("\\D", "").length() == 11){
-                this.CPF = CPF;
+            if(CPF == null || !CPF.matches("\\d{11}")){
+                this.CPF = "Inválido";
+                System.out.println("CPF Inválido");
             } else{
-                System.out.println("CPF inválido. Deve conter 11 números.");
                 this.CPF = CPF;
             }
     }
