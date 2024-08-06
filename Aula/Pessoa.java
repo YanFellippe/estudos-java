@@ -31,7 +31,7 @@ public class Pessoa {
     }
 
     public void apresentar(){
-        System.out.printf(" \n Nome: %s , \n Idade: %d " , nome, idade);
+        System.out.printf(" \n Nome: %s \n Idade: %d " , nome, idade);
     }
 
 }
