@@ -213,6 +213,11 @@ public class mataMosquito extends javax.swing.JFrame {
             + "Bateria: " + num);
         } else if(num == 0){
             JOptionPane.showMessageDialog(null, "Bateria vazia!");
+            txtLigar.setText("não");
+            statusRaquete.setText("Carregar raquete: " + txtCarregar.getText() + "\n"
+            + "Ligar raquete: " + txtLigar.getText() + "\n"
+            + "Usar raquete: " + txtUsar.getText() + "\n"
+            + "Bateria: " + num);
         }
     }//GEN-LAST:event_btnUsarMouseClicked
 
