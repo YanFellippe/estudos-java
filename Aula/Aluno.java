@@ -6,7 +6,9 @@ public class Aluno extends Pessoa{
     public Aluno(String nome, int idade, String curso){
         super(nome, idade);
         this.curso = curso;
-    }
+    }  
+
+    
 
     public void apresentar(){
         super.apresentar();
