@@ -33,6 +33,7 @@ public class TelaInicial extends javax.swing.JFrame {
         cadCliente = new javax.swing.JMenuItem();
         cadFuncionario = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        cadPessoas = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -85,7 +86,16 @@ public class TelaInicial extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Edit");
+        jMenu2.setText("Controle de Acesso");
+
+        cadPessoas.setText("Cadastrar Pessoa");
+        cadPessoas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cadPessoasActionPerformed(evt);
+            }
+        });
+        jMenu2.add(cadPessoas);
+
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
@@ -130,6 +140,12 @@ public class TelaInicial extends javax.swing.JFrame {
         cp.setVisible(true);
     }//GEN-LAST:event_cadPessoaActionPerformed
 
+    private void cadPessoasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadPessoasActionPerformed
+        CadastroPessoasForm cpf = new CadastroPessoasForm();
+        painel.add(cpf);
+        cpf.setVisible(true);
+    }//GEN-LAST:event_cadPessoasActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -169,6 +185,7 @@ public class TelaInicial extends javax.swing.JFrame {
     private javax.swing.JMenuItem cadCliente;
     private javax.swing.JMenuItem cadFuncionario;
     private javax.swing.JMenuItem cadPessoa;
+    private javax.swing.JMenuItem cadPessoas;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
