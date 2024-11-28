@@ -34,6 +34,8 @@ public class TelaInicial extends javax.swing.JFrame {
         cadFuncionario = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         cadPessoas = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        cadCatAlter = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -98,6 +100,18 @@ public class TelaInicial extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu2);
 
+        jMenu3.setText("Suprimentos");
+
+        cadCatAlter.setText("Cadastrar Categoria/Alterar");
+        cadCatAlter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cadCatAlterActionPerformed(evt);
+            }
+        });
+        jMenu3.add(cadCatAlter);
+
+        jMenuBar1.add(jMenu3);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -121,7 +135,7 @@ public class TelaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_cadFuncionarioActionPerformed
 
     private void cadClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadClienteActionPerformed
-        CadCliente cc = new  CadCliente();
+        CadClientes cc = new  CadClientes();
         painel.add(cc);
         cc.setVisible(true);
     }//GEN-LAST:event_cadClienteActionPerformed
@@ -145,6 +159,12 @@ public class TelaInicial extends javax.swing.JFrame {
         painel.add(cpf);
         cpf.setVisible(true);
     }//GEN-LAST:event_cadPessoasActionPerformed
+
+    private void cadCatAlterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadCatAlterActionPerformed
+        CadCatAlter cca = new CadCatAlter();
+        painel.add(cca);
+        cca.setVisible(true);
+    }//GEN-LAST:event_cadCatAlterActionPerformed
 
     /**
      * @param args the command line arguments
@@ -182,12 +202,14 @@ public class TelaInicial extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem cadCatAlter;
     private javax.swing.JMenuItem cadCliente;
     private javax.swing.JMenuItem cadFuncionario;
     private javax.swing.JMenuItem cadPessoa;
     private javax.swing.JMenuItem cadPessoas;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel painel;
     // End of variables declaration//GEN-END:variables

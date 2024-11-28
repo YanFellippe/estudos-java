@@ -4,13 +4,6 @@
  */
 package cadastroclientefuncionariodb;
 
-import java.lang.System.Logger;
-import java.lang.System.Logger.Level;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -128,7 +121,7 @@ public class CadCliente extends javax.swing.JInternalFrame {
                             .addComponent(idPessoa))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 451, Short.MAX_VALUE)
+                        .addGap(0, 492, Short.MAX_VALUE)
                         .addComponent(jLabel1)
                         .addGap(454, 454, 454))))
             .addGroup(layout.createSequentialGroup()
@@ -141,7 +134,7 @@ public class CadCliente extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(telefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -175,59 +168,59 @@ public class CadCliente extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnCadClienteActionPerformed
 
     private void btnCadClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCadClienteMouseClicked
-       try{
-           Connection con = BancoClass.conexaoBanco();
-           String sql = "INSERT INTO cliente(telefone, saldo, email, situacao, id_pessoa) VALUES (?, ?, ?, ?, ?)";
-           PreparedStatement stmt = con.prepareStatement(sql);
-           stmt.setString(1, telefone.getText());
-           stmt.setString(2, saldo.getText());
-           stmt.setString(3, email.getText());
-           stmt.setString(4, situação);
-           stmt.setString(5, idPessoa.getText());
-           stmt.execute();
-           con.close();
-           
-           JOptionPane.showMessageDialog(null, "Clçiente cadastrado com sucesso!");
-           telefone.setText(null);
-           saldo.setText(null);
-           email.setText(null);
-           situacaoBox.setSelectedItem(" ");
-           idPessoa.setText(null);
-       } catch(SQLException ex){
+        try{
+            Connection con = BancoClass.conexaoBanco();
+            String sql = "INSERT INTO cliente(telefone, saldo, email, situacao, id_pessoa) VALUES (?, ?, ?, ?, ?)";
+            PreparedStatement stmt = con.prepareStatement(sql);
+            stmt.setString(1, telefone.getText());
+            stmt.setString(2, saldo.getText());
+            stmt.setString(3, email.getText());
+            stmt.setString(4, situação);
+            stmt.setString(5, idPessoa.getText());
+            stmt.execute();
+            con.close();
+
+            JOptionPane.showMessageDialog(null, "Cliente cadastrado com sucesso!");
+            telefone.setText(null);
+            saldo.setText(null);
+            email.setText(null);
+            situacaoBox.setSelectedItem(" ");
+            idPessoa.setText(null);
+        } catch(SQLException ex){
             JOptionPane.showMessageDialog(null, "Erro ao cadastrar cliente!");
-       }
-       try {
+        }
+        try {
             Connection con = BancoClass.conexaoBanco();
             String sql = "SELECT * FROM cliente ORDER BY id_cliente DESC";
             PreparedStatement stmt = con.prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();
-                DefaultTableModel modeloTabela = (DefaultTableModel) table.getModel();
-                modeloTabela.setNumRows(0);
-                
-                while(rs.next()){
-                    Object [] dados = {
-                        rs.getString("id_cliente"), 
-                        rs.getString("telefone"), 
-                        rs.getString("saldo"), 
-                        rs.getString("email"), 
-                        rs.getString("situacao"), 
-                        rs.getString("id_pessoa")};
-                    modeloTabela.addRow(dados);
-                }
-               stmt.close();
-               rs.close();
-               con.close();
+            DefaultTableModel modeloTabela = (DefaultTableModel) table.getModel();
+            modeloTabela.setNumRows(0);
+
+            while(rs.next()){
+                Object [] dados = {
+                    rs.getString("id_cliente"),
+                    rs.getString("telefone"),
+                    rs.getString("saldo"),
+                    rs.getString("email"),
+                    rs.getString("situacao"),
+                    rs.getString("id_pessoa")};
+                modeloTabela.addRow(dados);
+            }
+            stmt.close();
+            rs.close();
+            con.close();
         } catch (SQLException ex){
-           JOptionPane.showMessageDialog(null, "Cliente não cadastrado!");
+            JOptionPane.showMessageDialog(null, "Cliente não cadastrado!");
         }
     }//GEN-LAST:event_btnCadClienteMouseClicked
 
     private void situacaoBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_situacaoBoxItemStateChanged
-       if(situacaoBox.getSelectedItem().equals("Ativo")){
-           situação = "A";
-       } else{
-           situação = "B";
-       }
+        if(situacaoBox.getSelectedItem().equals("Ativo")){
+            situação = "A";
+        } else{
+            situação = "B";
+        }
     }//GEN-LAST:event_situacaoBoxItemStateChanged
 
 
