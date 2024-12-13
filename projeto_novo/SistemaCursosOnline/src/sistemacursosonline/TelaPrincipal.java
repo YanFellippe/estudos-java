@@ -16,6 +16,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         cadPessoas = new javax.swing.JMenuItem();
+        cadPessoasCursos = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         cadCursos = new javax.swing.JMenuItem();
 
@@ -46,6 +47,19 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         jMenu1.add(cadPessoas);
+
+        cadPessoasCursos.setText("Cadastros dos Cursos");
+        cadPessoasCursos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cadPessoasCursosMouseClicked(evt);
+            }
+        });
+        cadPessoasCursos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cadPessoasCursosActionPerformed(evt);
+            }
+        });
+        jMenu1.add(cadPessoasCursos);
 
         jMenuBar1.add(jMenu1);
 
@@ -93,6 +107,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
         cc.setVisible(true);
     }//GEN-LAST:event_cadCursosActionPerformed
 
+    private void cadPessoasCursosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cadPessoasCursosMouseClicked
+        
+    }//GEN-LAST:event_cadPessoasCursosMouseClicked
+
+    private void cadPessoasCursosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadPessoasCursosActionPerformed
+        CadastroPessoaCurso cpc = new CadastroPessoaCurso();
+        painel.add(cpc);
+        cpc.setVisible(true);
+    }//GEN-LAST:event_cadPessoasCursosActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -127,6 +151,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem cadCursos;
     private javax.swing.JMenuItem cadPessoas;
+    private javax.swing.JMenuItem cadPessoasCursos;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;

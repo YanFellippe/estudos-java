@@ -249,15 +249,15 @@ public class CadastroPessoa extends javax.swing.JInternalFrame {
         con.setAutoCommit(false);
         String sql = "INSERT INTO pessoas(cpf_cnpj,nome,matricula,email,idade,telefone,endereco,atividade,situacao) VALUES(?,?,?,?,?,?,?,?,?);";
         PreparedStatement stmt = con.prepareStatement(sql);
-            stmt.setString(1, cpfCnpj.getText());
-            stmt.setString(2, nome.getText());
-            stmt.setString(3, matricula.getText());
-            stmt.setString(4, email.getText());
-            stmt.setString(5, idade.getText());
-            stmt.setString(6, telefone.getText());
-            stmt.setString(7, endereco.getText());
-            stmt.setString(8, atividades);
-            stmt.setString(9, situação);  
+        stmt.setString(1, cpfCnpj.getText());
+        stmt.setString(2, nome.getText());
+        stmt.setString(3, matricula.getText());
+        stmt.setString(4, email.getText());
+        stmt.setString(5, idade.getText());
+        stmt.setString(6, telefone.getText());
+        stmt.setString(7, endereco.getText());
+        stmt.setString(8, atividades);
+        stmt.setString(9, situação);  
 
         stmt.executeUpdate(); 
         con.commit(); 
